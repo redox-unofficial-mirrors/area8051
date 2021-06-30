@@ -553,6 +553,26 @@ pub trait Isa: Mem + Reg {
                 debug!(" ; 0x{:04X}: 0x{:02X}", address, value);
             },
 
+            /* div ab */
+            0x84 => {
+                debug!("div ab");
+                let a = self.load(self.a());
+                let b = self.load(self.b());
+
+                let (quotient, remainder) = if b == 0 {
+                    // Undefined
+                    self.update_psw(false, false, true);
+                    (a, b)
+                } else {
+                    self.update_psw(false, false, false);
+                    (a / b, a % b)
+                };
+
+                self.store(self.a(), quotient);
+                self.store(self.b(), remainder);
+                debug!(" ; 0x{:02X} / 0x{:02X} => 0x{:04X} (0x{:04X})", a, b, quotient, remainder);
+            },
+
             /* mov address, address */
             0x85 => {
                 let src = self.load_pc();
