@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: MIT
+
 use area8051::{Addr, Isa, Mcu, Mem};
 use std::{env, fs};
 

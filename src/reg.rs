@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: MIT
+
 use crate::{Addr, Mem};
 
 pub trait Reg: Mem {

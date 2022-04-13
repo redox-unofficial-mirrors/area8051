@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: MIT
+
 #[cfg(feature = "debug")]
 macro_rules! debug {
     ($($arg:tt)*) => (eprint!($($arg)*));
