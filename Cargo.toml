@@ -3,6 +3,10 @@ name = "area8051"
 version = "0.1.0"
 authors = ["Jeremy Soller <jeremy@system76.com>"]
 edition = "2018"
+license = "MIT"
+description = "An emulator for 8051 microcontrollers"
+repository = "https://gitlab.redox-os.org/redox-os/area8051"
+categories = ["emulators"]
 
 [features]
 default = []
