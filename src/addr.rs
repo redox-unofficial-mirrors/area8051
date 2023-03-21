@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: MIT
+
 #[derive(Clone, Copy)]
 pub enum Addr {
     /// Registers
